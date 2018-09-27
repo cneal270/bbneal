@@ -56,6 +56,7 @@ $(document).ready(function(){
     $("#chart td.nom-dot").text("3");
     $("#chart td.pov-dot").text("7");
     $("#chart td.fav").text("10");
+    $("#chart td.runner-up-fav").text("25");
     $("#chart td.co-hoh1").text("2.5");
     $("#chart td.co-hoh2").text("2.5");
     
