@@ -9,22 +9,22 @@ $(document).ready(function(){
     var kia = 0;
     var mom = 0;
     
-    var faysal = 0;
-    var jc = 0;
-    var bayleigh = 0;
-    var steve = 0;
-    var tyler = 0;
-    var rachel = 0;
-    var scottie = 0;
-    var rockstar = 0;
-    var winston = 0;
-    var brett = 0;
-    var angela = 0;
+    var isabella = 0;
+    var jack = 0;
+    var jessica = 0;
+    var cliff = 0;
+    var tommy = 0;
+    var ovi = 0;
+    var christie = 0;
+    var david = 0;
+    var nick = 0;
+    var jackson = 0;
+    var holly = 0;
+    var kathryn = 0;
+    var analyse = 0;
     var sam = 0;
-    var swaggyc = 0;
-    var kaycee = 0;
-    var haleigh = 0;
-    var kaitlyn = 0;
+    var kemi = 0;
+    var nicole = 0;
     
     $("#chart td.hoh").text("5");
     $("#chart td.nom").text("-1");
@@ -60,59 +60,9 @@ $(document).ready(function(){
     $("#chart td.co-hoh1").text("2.5");
     $("#chart td.co-hoh2").text("2.5");
     
-    $("td[name~='faysal']").each(function() {
+    $("td[name~='analyse']").each(function() {
         if ($(this).html() != "") {
-            faysal = faysal + parseFloat($(this).html());
-        }
-    });
-    $("td[name~='jc']").each(function() {
-        if ($(this).html() != "") {
-            jc = jc + parseFloat($(this).html());
-        }
-    });
-    $("td[name~='bayleigh']").each(function() {
-        if ($(this).html() != "") {
-            bayleigh = bayleigh + parseFloat($(this).html());
-        }
-    });
-    $("td[name~='steve']").each(function() {
-        if ($(this).html() != "") {
-            steve = steve + parseFloat($(this).html());
-        }
-    });
-    $("td[name~='tyler']").each(function() {
-        if ($(this).html() != "") {
-            tyler = tyler + parseFloat($(this).html());
-        }
-    });
-    $("td[name~='rachel']").each(function() {
-        if ($(this).html() != "") {
-            rachel = rachel + parseFloat($(this).html());
-        }
-    });
-    $("td[name~='scottie']").each(function() {
-        if ($(this).html() != "") {
-            scottie = scottie + parseFloat($(this).html());
-        }
-    });
-    $("td[name~='rockstar']").each(function() {
-        if ($(this).html() != "") {
-            rockstar = rockstar + parseFloat($(this).html());
-        }
-    });
-    $("td[name~='winston']").each(function() {
-        if ($(this).html() != "") {
-            winston = winston + parseFloat($(this).html());
-        }
-    });
-    $("td[name~='brett']").each(function() {
-        if ($(this).html() != "") {
-            brett = brett + parseFloat($(this).html());
-        }
-    });
-    $("td[name~='angela']").each(function() {
-        if ($(this).html() != "") {
-            angela = angela + parseFloat($(this).html());
+            analyse = analyse + parseFloat($(this).html());
         }
     });
     $("td[name~='sam']").each(function() {
@@ -120,69 +70,119 @@ $(document).ready(function(){
             sam = sam + parseFloat($(this).html());
         }
     });
-    $("td[name~='swaggyc']").each(function() {
+    $("td[name~='kemi']").each(function() {
         if ($(this).html() != "") {
-            swaggyc = swaggyc + parseFloat($(this).html());
+            kemi = kemi + parseFloat($(this).html());
         }
     });
-    $("td[name~='kaycee']").each(function() {
+    $("td[name~='nicole']").each(function() {
         if ($(this).html() != "") {
-            kaycee = kaycee + parseFloat($(this).html());
+            nicole = nicole + parseFloat($(this).html());
         }
     });
-    $("td[name~='haleigh']").each(function() {
+    $("td[name~='tommy']").each(function() {
         if ($(this).html() != "") {
-            haleigh = haleigh + parseFloat($(this).html());
+            tommy = tommy + parseFloat($(this).html());
         }
     });
-    $("td[name~='kaitlyn']").each(function() {
+    $("td[name~='ovi']").each(function() {
         if ($(this).html() != "") {
-            kaitlyn = kaitlyn + parseFloat($(this).html());
+            ovi = ovi + parseFloat($(this).html());
+        }
+    });
+    $("td[name~='christie']").each(function() {
+        if ($(this).html() != "") {
+            christie = christie + parseFloat($(this).html());
+        }
+    });
+    $("td[name~='david']").each(function() {
+        if ($(this).html() != "") {
+            david = david + parseFloat($(this).html());
+        }
+    });
+    $("td[name~='nick']").each(function() {
+        if ($(this).html() != "") {
+            nick = nick + parseFloat($(this).html());
+        }
+    });
+    $("td[name~='jackson']").each(function() {
+        if ($(this).html() != "") {
+            jackson = jackson + parseFloat($(this).html());
+        }
+    });
+    $("td[name~='holly']").each(function() {
+        if ($(this).html() != "") {
+            holly = holly + parseFloat($(this).html());
+        }
+    });
+    $("td[name~='kathryn']").each(function() {
+        if ($(this).html() != "") {
+            kathryn = kathryn + parseFloat($(this).html());
+        }
+    });
+    $("td[name~='isabella']").each(function() {
+        if ($(this).html() != "") {
+            isabella = isabella + parseFloat($(this).html());
+        }
+    });
+    $("td[name~='jack']").each(function() {
+        if ($(this).html() != "") {
+            jack = jack + parseFloat($(this).html());
+        }
+    });
+    $("td[name~='jessica']").each(function() {
+        if ($(this).html() != "") {
+            jessica = jessica + parseFloat($(this).html());
+        }
+    });
+    $("td[name~='cliff']").each(function() {
+        if ($(this).html() != "") {
+            cliff = cliff + parseFloat($(this).html());
         }
     });
     
     
-    $("td[name~='faysal_total']").text(faysal);
-    $("td[name~='jc_total']").text(jc);
-    $("td[name~='bayleigh_total']").text(bayleigh);
-    $("td[name~='steve_total']").text(steve);
-    $("td[name~='tyler_total']").text(tyler);
-    $("td[name~='rachel_total']").text(rachel);
-    $("td[name~='scottie_total']").text(scottie);
-    $("td[name~='rockstar_total']").text(rockstar);
-    $("td[name~='winston_total']").text(winston);
-    $("td[name~='brett_total']").text(brett);
-    $("td[name~='angela_total']").text(angela);
+    $("td[name~='analyse_total']").text(analyse);
     $("td[name~='sam_total']").text(sam);
-    $("td[name~='swaggyc_total']").text(swaggyc);
-    $("td[name~='kaycee_total']").text(kaycee);
-    $("td[name~='haleigh_total']").text(haleigh);
-    $("td[name~='kaitlyn_total']").text(kaitlyn);
+    $("td[name~='kemi_total']").text(kemi);
+    $("td[name~='nicole_total']").text(nicole);
+    $("td[name~='tommy_total']").text(tommy);
+    $("td[name~='ovi_total']").text(ovi);
+    $("td[name~='christie_total']").text(christie);
+    $("td[name~='david_total']").text(david);
+    $("td[name~='nick_total']").text(nick);
+    $("td[name~='jackson_total']").text(jackson);
+    $("td[name~='holly_total']").text(holly);
+    $("td[name~='kathryn_total']").text(kathryn);
+    $("td[name~='isabella_total']").text(isabella);
+    $("td[name~='jack_total']").text(jack);
+    $("td[name~='jessica_total']").text(jessica);
+    $("td[name~='cliff_total']").text(cliff);
     
     
     $("span.kia").text(
-		parseFloat($("td[name~='faysal_total']").html()) +
-        parseFloat($("td[name~='jc_total']").html()) +
-        parseFloat($("td[name~='bayleigh_total']").html()) +
-        parseFloat($("td[name~='steve_total']").html())
+		parseFloat($("td[name~='analyse_total']").html()) +
+        parseFloat($("td[name~='sam_total']").html()) +
+        parseFloat($("td[name~='kemi_total']").html()) +
+        parseFloat($("td[name~='nicole_total']").html())
 	);
     $("span.christian").text(
-        parseFloat($("td[name~='tyler_total']").html()) +
-        parseFloat($("td[name~='rachel_total']").html()) +
-        parseFloat($("td[name~='scottie_total']").html()) +
-        parseFloat($("td[name~='rockstar_total']").html())
+        parseFloat($("td[name~='tommy_total']").html()) +
+        parseFloat($("td[name~='ovi_total']").html()) +
+        parseFloat($("td[name~='christie_total']").html()) +
+        parseFloat($("td[name~='david_total']").html())
     );
     $("span.kristy").text(
-        parseFloat($("td[name~='winston_total']").html()) +
-        parseFloat($("td[name~='brett_total']").html()) +
-        parseFloat($("td[name~='angela_total']").html()) +
-        parseFloat($("td[name~='sam_total']").html())
+        parseFloat($("td[name~='nick_total']").html()) +
+        parseFloat($("td[name~='jackson_total']").html()) +
+        parseFloat($("td[name~='holly_total']").html()) +
+        parseFloat($("td[name~='kathryn_total']").html())
     );
     $("span.mom").text(
-        parseFloat($("td[name~='swaggyc_total']").html()) +
-        parseFloat($("td[name~='kaycee_total']").html()) +
-        parseFloat($("td[name~='haleigh_total']").html()) +
-        parseFloat($("td[name~='kaitlyn_total']").html())
+        parseFloat($("td[name~='isabella_total']").html()) +
+        parseFloat($("td[name~='jack_total']").html()) +
+        parseFloat($("td[name~='jessica_total']").html()) +
+        parseFloat($("td[name~='cliff_total']").html())
     );
     
     /*var max = Math.max(christian, mom, kristy);
