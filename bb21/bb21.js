@@ -210,7 +210,7 @@ $(document).ready(function(){
         $("span.mom").addClass("good");
     }
     else {
-        $("span.mom").addClass("mom");
+        $("span.mom").addClass("bad");
     }
 	
     kia = $("span.kia").text();
