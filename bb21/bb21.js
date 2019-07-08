@@ -48,6 +48,7 @@ $(document).ready(function(){
     $("#chart td.expelled").text("-5");
     $("#chart td.dot").text("4");
     $("#chart td.rk").text("4");
+    $("#chart td.hoh-rk").text("9");
     $("#chart td.nom-rk").text("3");
     $("#chart td.rk-nom").text("3");
     $("#chart td.rk-nom-evicted-pj").text("0");
