@@ -53,6 +53,7 @@ $(document).ready(function(){
     $("#chart td.rk-nom").text("3");
     $("#chart td.rk-nom-evicted-pj").text("0");
     $("#chart td.nom-rk-evicted-pj").text("0");
+    $("#chart td.nom-dot-evicted-pj").text("0");
     $("#chart td.hn-dot").text("3.5");
     $("#chart td.nom-dot").text("3");
     $("#chart td.pov-dot").text("7");
