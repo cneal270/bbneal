@@ -1,0 +1,710 @@
+<html>
+    <head>
+        <title>Big Brother 21: NFL (Neal Fantasy League)</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="bb21/bb21.js"></script>
+        <style>
+        body{
+            text-align:center;
+        }
+        img{
+            width:70px;
+        }
+        table{
+            margin:auto;
+            text-align:center;
+        }
+        th, td{
+            text-align:center;
+            font-weight:bold;
+            font-size:20px;
+            text-shadow: 0px 0px 5px white;
+        }
+        .name{
+            font-size:15px;
+        }
+        .border{
+            background-color:#ccc!important;
+        }
+        .good{
+            color:green;
+        }
+        img.evicted{
+            filter: grayscale(100%);
+        }
+        .hoh{
+            background-color:#66FF66;
+        }
+        .pov{
+            background-color:#FFFF33;
+        }
+        .nom{
+            background-color:#6666FF;
+        }
+        .nom-evicted-pj, .nom-evicted-j{
+            background-color:#6666FF;
+            color:red;
+        }
+        .hoh-pov{
+            background: linear-gradient(to bottom right, #66FF66 40%, #FFFF33 60%);
+        }
+        .nom-pov{
+            background: linear-gradient(to bottom right, #6666FF 40%, #FFFF33 60%);
+        }
+        .nom-vetoed{
+            background: linear-gradient(to bottom right, #6666FF 40%, rgba(0,0,0,0) 60%);
+        }
+        .nom-pov-vetoed{
+            background: linear-gradient(to bottom right, #6666FF 25%, #FFFF33 50%, rgba(0,0,0,0) 75%);
+        }
+        .hn{
+            background-color:tan;
+        }
+        .hn-dot{
+            background: linear-gradient(to bottom right, tan 40%, #FF66FF 60%);
+        }
+        .hn-nom{
+            background: linear-gradient(to bottom right, tan 40%, #6666FF 60%);
+        }
+        .hn-nom-evicted-pj, .hn-nom-evicted-j{
+            background: linear-gradient(to bottom right, tan 40%, #6666FF 60%);
+            color:red;
+        }
+        .hn-pov{
+            background: linear-gradient(to bottom right, tan 40%, #FFFF33 60%);
+        }
+        .hn-nom-pov{
+            background: linear-gradient(to bottom right, tan 25%, #6666FF 50%, #FFFF33 75%);
+        }
+        .hn-nom-vetoed{
+            background: linear-gradient(to bottom right, tan 25%, #6666FF 50%, rgba(0,0,0,0) 75%);
+        }
+        .hn-nom-pov-vetoed{
+            background: linear-gradient(to bottom right, tan 20%, #6666FF 40%, #FFFF33 60%, rgba(0,0,0,0) 80%);
+        }
+        .prejury, .bad, .nom-dot-evicted-pj, .nom-dot-evicted-j{
+            color: red;
+        }
+        .jury{
+            color: pink;
+        }
+        .expelled{
+            background-color:red;
+        }
+        .gone{
+            background-color:gray;
+        }
+        .runner-up{
+            background-color:silver;
+        }
+        .winner{
+            background-color:gold;
+        }
+        .dot{
+            background-color:#FF66FF;
+        }
+        .rk{
+            background-color:orange;
+        }
+        .hoh-dot{
+            background: linear-gradient(to bottom right, #66FF66 40%, #FF66FF 60%);
+        }
+        .nom-rk, .nom-rk-evicted-pj{
+            background: linear-gradient(to bottom right, #6666FF 40%, orange 60%);
+        }
+        .rk-nom, .rk-nom-evicted-pj{
+            background: linear-gradient(to bottom right, orange 40%, #6666FF 60%);
+        }
+        .nom-dot, .nom-dot-evicted-pj, .nom-dot-evicted-j{
+            background: linear-gradient(to bottom right, #6666FF 40%, #FF66FF 60%);
+        }
+        .pov-dot{
+            background: linear-gradient(to bottom right, #FFFF33 40%, #FF66FF 60%);
+        }
+        .fav{
+            background-color:purple;
+        }
+        .runner-up-fav{
+            background: linear-gradient(to bottom right, silver 40%, purple 60%);
+        }
+        .first{
+            background-color:gold;
+        }
+        .second{
+            background-color:silver;
+        }
+        .third{
+            background-color:#CD7F32;
+        }
+        .thisWeek{
+            border: 5px solid black;
+        }
+        .thisWeek > th{
+            color:blue;
+        }
+        .rules > td, .rules > th{
+            font-size:15px!important;
+            text-align:left!important;
+        }
+        .twin{
+            font-size:15px;
+        }
+        .co-hoh1{
+            background: linear-gradient(to bottom right, #66FF66 40%, rgba(0,0,0,0) 60%);
+        }
+        .co-hoh2{
+            background: linear-gradient(to bottom right, rgba(0,0,0,0) 40%, #66FF66 60%);
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Big Brother 21: NFL (Neal Fantasy League)</h1>
+        <h2>*** CONTAINS SPOILERS!!! ***</h2>
+        <div><button id="rules" class="btn btn-primary">Show/Hide Rules</button><hr/></div>
+        
+        <div id="rulesDiv" style="width:400px;margin:auto;display:none;">
+            <table class="table table-striped table-bordered">
+                <tr class="rules">
+                    <th>Color</th>
+                    <th>What Happened</th>
+                    <th>Point Value</th>
+                </tr>
+                <tr class="rules">
+                    <td class="hoh"></td>
+                    <td>Won HOH</td>
+                    <td><span class="good">+5</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="nom"></td>
+                    <td>Nominated</td>
+                    <td><span class="bad">-1</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="pov"></td>
+                    <td>Won Veto</td>
+                    <td><span class="good">+3</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="hn"></td>
+                    <td>Have Not</td>
+                    <td><span class="bad">-0.5</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="hoh-pov"></td>
+                    <td>Won HOH & Veto</td>
+                    <td>+5 +3 = <span class="good">+8</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="nom-pov"></td>
+                    <td>Nominated & Won Veto</td>
+                    <td>-1 +3 = <span class="good">+2</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="nom-vetoed"></td>
+                    <td>Nominated & Vetoed</td>
+                    <td>-1 +1 = 0</td>
+                </tr>
+                <tr class="rules">
+                    <td class="nom-pov-vetoed"></td>
+                    <td>Nominated, Won POV, & Saved Self</td>
+                    <td>-1 +3 +1 = <span class="good">+3</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="hn-nom"></td>
+                    <td>Have Not & Nominated</td>
+                    <td>-0.5 -1 = <span class="bad">-1.5</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="hn-pov"></td>
+                    <td>Have Not & Won Veto</td>
+                    <td>-0.5 +3 = <span class="good">+2.5</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="hn-nom-pov"></td>
+                    <td>Have Not, Nominated & Won Veto</td>
+                    <td>-0.5 -1 +3 = <span class="good">+1.5</span></td></td>
+                </tr>
+                <tr class="rules">
+                    <td class="hn-nom-vetoed"></td>
+                    <td>Have Not, Nominated & Vetoed</td>
+                    <td>-0.5 -1 +1 = <span class="bad">-0.5</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="hn-nom-pov-vetoed"></td>
+                    <td>Have Not, Nominated, Won Veto & Saved Self</td>
+                    <td>-0.5 -1 +3 +1 = <span class="good">+2.5</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class=""></td>
+                    <td>Evicted (Pre-Jury)</td>
+                    <td>Bonus <span class="bad">-3</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class=""></td>
+                    <td>Evicted (Jury)</td>
+                    <td>Bonus <span class="bad">-2</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="gone"></td>
+                    <td>Not in House</td>
+                    <td>0</td>
+                </tr>
+                <tr class="rules">
+                    <td class="runner-up"></td>
+                    <td>Runner-Up</td>
+                    <td><span class="good">+15</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="winner"></td>
+                    <td>WINNER</td>
+                    <td><span class="good">+30</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="expelled"></td>
+                    <td>Expelled/Quit</td>
+                    <td>Bonus <span class="bad">-5</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="dot"></td>
+                    <td>Won A Secret Power</td>
+                    <td><span class="good">+4</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="rk"></td>
+                    <td>Voted Camp Director</td>
+                    <td><span class="good">+4</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="nom-dot"></td>
+                    <td>Nominated & Won Secret Power</td>
+                    <td>-1 +4 = <span class="good">+3</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="hoh-dot"></td>
+                    <td>Won HOH & Secret Power</td>
+                    <td>+5 +4 = <span class="good">+9</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="pov-dot"></td>
+                    <td>Won Veto & Secret Power</td>
+                    <td>+3 +4 = <span class="good">+7</span></td>
+                </tr>
+                <tr class="rules">
+                    <td class="fav"></td>
+                    <td>Won America's Favorite Player</td>
+                    <td><span class="good">+10</span></td>
+                </tr>
+            </table>
+        </div>
+        <footer>Seasons: <a href="bb17.html">BB17</a> | <a href="bb18.html">BB18</a> | <a href="bb19.html">BB19</a> | <a href="bb20.html">BB20</a> | BB21 | <a href="index.html">BB22</a></footer>
+        <hr/>
+        <table class="table table-striped table-bordered" id="chart">
+            <tr>
+                <td></td>
+                <th colspan="4" class="mom">Mom&nbsp;Boss&nbsp;&mdash; <span class="mom"></span> points</th>
+                <td class="border"></td>
+                <th colspan="4" class="christian">Christian &mdash; <span class="christian"></span> points</th>
+                <td class="border"></td>
+                <th colspan="4" class="kristy winner">Krizzle &mdash; <span class="kristy"></span> points</th>
+                <td class="border"></td>
+                <th colspan="4" class="kia">Kee-Kee &mdash; <span class="kia"></span> points</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216163"><img src="bb21/isabella.jpg" class="evicted" /><br/>Isabella</a>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216158"><img src="bb21/jack.jpg" class="evicted" /><br/>Jack</a>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216154"><img src="bb21/jessica.jpg" class="evicted" /><br/>Jessica</a>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216155"><img src="bb21/cliff.jpg" class="evicted" /><br/>Cliff</a>
+                    <td class="border"></td>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216151"><img src="bb21/tommy.jpg" class="evicted" /><br/>Tommy</a>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216156"><img src="bb21/ovi.jpg" class="evicted" /><br/>Ovi</a>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216160"><img src="bb21/christie.jpg" class="evicted" /><br/>Christie</a>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216149"><img src="bb21/david.jpg" class="evicted" /><br/>David</a>
+                    <td class="border"></td>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216157"><img src="bb21/nick.jpg" class="evicted" /><br/>Nick</a>
+                <th class="name winner"><a href="http://www.cbs.com/shows/big_brother/cast/216159"><img src="bb21/jackson.jpg" class="" /><br/>Jackson</a>
+                <th class="name runner-up"><a href="http://www.cbs.com/shows/big_brother/cast/216148"><img src="bb21/holly.jpg" class="evicted" /><br/>Holly</a>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216152"><img src="bb21/kathryn.jpg" class="evicted" /><br/>Kathryn</a>
+                    <td class="border"></td>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216162"><img src="bb21/analyse.jpg" class="evicted" /><br/>Analyse</a>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216161"><img src="bb21/sam.jpg" class="evicted" /><br/>Sam</a>
+                <th class="name "><a href="http://www.cbs.com/shows/big_brother/cast/216153"><img src="bb21/kemi.jpg" class="evicted" /><br/>Kemi</a>
+                <th class="name fav"><a href="http://www.cbs.com/shows/big_brother/cast/216150"><img src="bb21/nicole.jpg" class="evicted" /><br/>Nicole</a>
+            </tr>
+            <tr class="">
+                <th rowspan='2' style='vertical-align: middle;'>Week&nbsp;1</th>
+                <td name="isabella" class=""></td>
+                <td name="jack" class=""></td>
+                <td name="jessica" class="nom"></td>
+                <td name="cliff" class="nom"></td>
+                    <td class="border"></td>
+                <td name="tommy" class=""></td>
+                <td name="ovi" class=""></td>
+                <td name="christie" class=""></td>
+                <td name="david" class="nom-evicted-pj"></td>
+                    <td class="border"></td>
+                <td name="nick" class=""></td>
+                <td name="jackson" class="rk"></td>
+                <td name="holly" class=""></td>
+                <td name="kathryn" class=""></td>
+                    <td class="border"></td>
+                <td name="analyse" class=""></td>
+                <td name="sam" class=""></td>
+                <td name="kemi" class="nom"></td>
+                <td name="nicole" class=""></td>
+            </tr>
+            <tr>
+                <td name="isabella" class=""></td>
+                <td name="jack" class=""></td>
+                <td name="jessica" class=""></td>
+                <td name="cliff" class="nom-vetoed"></td>
+                    <td class="border"></td>
+                <td name="tommy" class=""></td>
+                <td name="ovi" class="nom-dot-evicted-pj"></td>
+                <td name="christie" class="hoh"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class=""></td>
+                <td name="jackson" class=""></td>
+                <td name="holly" class=""></td>
+                <td name="kathryn" class="nom"></td>
+                    <td class="border"></td>
+                <td name="analyse" class=""></td>
+                <td name="sam" class="pov"></td>
+                <td name="kemi" class=""></td>
+                <td name="nicole" class=""></td>
+            </tr>
+            <tr class=""">
+                <th>Week&nbsp;2</th>
+                <td name="isabella" class=""></td>
+                <td name="jack" class="hoh-dot"></td>
+                <td name="jessica" class="nom"></td>
+                <td name="cliff" class=""></td>
+                    <td class="border"></td>
+                <td name="tommy" class=""></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class=""></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class=""></td>
+                <td name="jackson" class=""></td>
+                <td name="holly" class=""></td>
+                <td name="kathryn" class=""></td>
+                    <td class="border"></td>
+                <td name="analyse" class=""></td>
+                <td name="sam" class="pov"></td>
+                <td name="kemi" class="nom-evicted-pj"></td>
+                <td name="nicole" class=""></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;3</th>
+                <td name="isabella" class=""></td>
+                <td name="jack" class=""></td>
+                <td name="jessica" class="nom-vetoed"></td>
+                <td name="cliff" class="nom"></td>
+                    <td class="border"></td>
+                <td name="tommy" class=""></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class="dot"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class="hoh"></td>
+                <td name="jackson" class=""></td>
+                <td name="holly" class=""></td>
+                <td name="kathryn" class="pov"></td>
+                    <td class="border"></td>
+                <td name="analyse" class=""></td>
+                <td name="sam" class=""></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class="nom"></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;4</th>
+                <td name="isabella" class="nom-evicted-pj"></td>
+                <td name="jack" class="nom"></td>
+                <td name="jessica" class=""></td>
+                <td name="cliff" class="hoh"></td>
+                    <td class="border"></td>
+                <td name="tommy" class=""></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class=""></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class=""></td>
+                <td name="jackson" class="nom-pov-vetoed"></td>
+                <td name="holly" class=""></td>
+                <td name="kathryn" class=""></td>
+                    <td class="border"></td>
+                <td name="analyse" class=""></td>
+                <td name="sam" class=""></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class=""></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;5</th>
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class=""></td>
+                <td name="jessica" class=""></td>
+                <td name="cliff" class=""></td>
+                    <td class="border"></td>
+                <td name="tommy" class=""></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class=""></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class="nom-pov-vetoed"></td>
+                <td name="jackson" class=""></td>
+                <td name="holly" class="hoh"></td>
+                <td name="kathryn" class="nom"></td>
+                    <td class="border"></td>
+                <td name="analyse" class=""></td>
+                <td name="sam" class="nom-evicted-pj"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class=""></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;6</th>
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class="nom-evicted-j"></td>
+                <td name="jessica" class="hoh-pov"></td>
+                <td name="cliff" class=""></td>
+                    <td class="border"></td>
+                <td name="tommy" class=""></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class=""></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class=""></td>
+                <td name="jackson" class="nom"></td>
+                <td name="holly" class=""></td>
+                <td name="kathryn" class=""></td>
+                    <td class="border"></td>
+                <td name="analyse" class=""></td>
+                <td name="sam" class="gone"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class=""></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;7</th>
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class="gone"></td>
+                <td name="jessica" class=""></td>
+                <td name="cliff" class="nom"></td>
+                    <td class="border"></td>
+                <td name="tommy" class="hoh-pov"></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class="nom-vetoed"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class=""></td>
+                <td name="jackson" class=""></td>
+                <td name="holly" class=""></td>
+                <td name="kathryn" class="nom-evicted-j"></td>
+                    <td class="border"></td>
+                <td name="analyse" class=""></td>
+                <td name="sam" class="gone"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class=""></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;8</th>
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class="gone"></td>
+                <td name="jessica" class=""></td>
+                <td name="cliff" class=""></td>
+                    <td class="border"></td>
+                <td name="tommy" class=""></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class="nom"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class=""></td>
+                <td name="jackson" class="hoh-pov"></td>
+                <td name="holly" class=""></td>
+                <td name="kathryn" class="gone"></td>
+                    <td class="border"></td>
+                <td name="analyse" class="nom-evicted-j"></td>
+                <td name="sam" class="gone"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class=""></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;9</th>
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class="gone"></td>
+                <td name="jessica" class=""></td>
+                <td name="cliff" class=""></td>
+                    <td class="border"></td>
+                <td name="tommy" class=""></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class="nom"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class="nom-dot-evicted-j"></td>
+                <td name="jackson" class="pov"></td>
+                <td name="holly" class="hoh"></td>
+                <td name="kathryn" class="gone"></td>
+                    <td class="border"></td>
+                <td name="analyse" class="gone"></td>
+                <td name="sam" class="gone"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class=""></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;10</th>
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class="gone"></td>
+                <td name="jessica" class="nom-evicted-j"></td>
+                <td name="cliff" class="nom"></td>
+                    <td class="border"></td>
+                <td name="tommy" class="pov"></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class="nom-vetoed"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class="gone"></td>
+                <td name="jackson" class="hoh"></td>
+                <td name="holly" class=""></td>
+                <td name="kathryn" class="gone"></td>
+                    <td class="border"></td>
+                <td name="analyse" class="gone"></td>
+                <td name="sam" class="gone"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class=""></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;10.5</th>
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class="gone"></td>
+                <td name="jessica" class="gone"></td>
+                <td name="cliff" class="pov"></td>
+                    <td class="border"></td>
+                <td name="tommy" class="nom"></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class="nom-evicted-j"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class="gone"></td>
+                <td name="jackson" class=""></td>
+                <td name="holly" class=""></td>
+                <td name="kathryn" class="gone"></td>
+                    <td class="border"></td>
+                <td name="analyse" class="gone"></td>
+                <td name="sam" class="gone"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class="hoh"></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;11</th>
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class="gone"></td>
+                <td name="jessica" class="gone"></td>
+                <td name="cliff" class="nom-vetoed"></td>
+                    <td class="border"></td>
+                <td name="tommy" class="nom-evicted-j"></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class="gone"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class="gone"></td>
+                <td name="jackson" class="hoh"></td>
+                <td name="holly" class="nom"></td>
+                <td name="kathryn" class="gone"></td>
+                    <td class="border"></td>
+                <td name="analyse" class="gone"></td>
+                <td name="sam" class="gone"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class="pov"></td>
+            </tr>
+            <tr class="">
+                <th>Week&nbsp;12</th>
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class="gone"></td>
+                <td name="jessica" class="gone"></td>
+                <td name="cliff" class="nom-evicted-j"></td>
+                    <td class="border"></td>
+                <td name="tommy" class="gone"></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class="gone"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class="gone"></td>
+                <td name="jackson" class="nom-pov-vetoed"></td>
+                <td name="holly" class="nom"></td>
+                <td name="kathryn" class="gone"></td>
+                    <td class="border"></td>
+                <td name="analyse" class="gone"></td>
+                <td name="sam" class="gone"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class="hoh"></td>
+            </tr>
+            <tr class="thisWeek">
+                <th rowspan='2' style='vertical-align: middle;'>FINALE</th>
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class="gone"></td>
+                <td name="jessica" class="gone"></td>
+                <td name="cliff" class="nom"></td>
+                    <td class="border"></td>
+                <td name="tommy" class="gone"></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class="gone"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class="gone"></td>
+                <td name="jackson" class="hoh"></td>
+                <td name="holly" class="nom"></td>
+                <td name="kathryn" class="gone"></td>
+                    <td class="border"></td>
+                <td name="analyse" class="gone"></td>
+                <td name="sam" class="gone"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class="nom-evicted-j"></td>
+            </tr>
+            <tr class="thisWeek">
+                <td name="isabella" class="gone"></td>
+                <td name="jack" class="gone"></td>
+                <td name="jessica" class="gone"></td>
+                <td name="cliff" class="gone"></td>
+                    <td class="border"></td>
+                <td name="tommy" class="gone"></td>
+                <td name="ovi" class="gone"></td>
+                <td name="christie" class="gone"></td>
+                <td name="david" class="gone"></td>
+                    <td class="border"></td>
+                <td name="nick" class="gone"></td>
+                <td name="jackson" class="winner"></td>
+                <td name="holly" class="runner-up"></td>
+                <td name="kathryn" class="gone"></td>
+                    <td class="border"></td>
+                <td name="analyse" class="gone"></td>
+                <td name="sam" class="gone"></td>
+                <td name="kemi" class="gone"></td>
+                <td name="nicole" class="fav"></td>
+            </tr>
+            <tr class="info">
+                <th>Total</th>
+                <td name="isabella_total" class=""></td>
+                <td name="jack_total" class=""></td>
+                <td name="jessica_total" class=""></td>
+                <td name="cliff_total" class=""></td>
+                    <td class="border"></td>
+                <td name="tommy_total" class=""></td>
+                <td name="ovi_total" class=""></td>
+                <td name="christie_total" class=""></td>
+                <td name="david_total" class=""></td>
+                    <td class="border"></td>
+                <td name="nick_total" class=""></td>
+                <td name="jackson_total" class=""></td>
+                <td name="holly_total" class=""></td>
+                <td name="kathryn_total" class=""></td>
+                    <td class="border"></td>
+                <td name="analyse_total" class=""></td>
+                <td name="sam_total" class=""></td>
+                <td name="kemi_total" class=""></td>
+                <td name="nicole_total" class=""></td>
+            </tr>
+        </table>
+    </body>
+</html>
