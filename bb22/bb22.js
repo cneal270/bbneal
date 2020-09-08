@@ -45,7 +45,9 @@ $(document).ready(function(){
     $("#chart td.nom").text("-1");
     $("#chart td.pov").text("3");
     $("#chart td.hn").text("-0.5");
+    $("#chart td.dot").text("4");
     $("#chart td.hoh-pov").text("8");
+    $("#chart td.hoh-dot-pov").text("12");
     $("#chart td.nom-pov").text("2");
     $("#chart td.nom-vetoed").text("0");
     $("#chart td.nom-pov-vetoed").text("3");
