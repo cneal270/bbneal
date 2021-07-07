@@ -1,0 +1,160 @@
+body{
+	text-align:center;
+}
+img{
+	width:70px;
+}
+table{
+	margin:auto;
+	text-align:center;
+}
+th, td{
+	text-align:center;
+	font-weight:bold;
+	font-size:20px;
+	text-shadow: 0px 0px 5px white;
+}
+.name{
+	font-size:15px;
+}
+.border{
+	background-color:#ccc!important;
+}
+.good{
+	color:green;
+}
+img.evicted{
+	filter: grayscale(100%);
+}
+.hoh{
+	background-color:#66FF66;
+}
+.pov{
+	background-color:#FFFF33;
+}
+.nom{
+	background-color:#6666FF;
+}
+.nom-evicted-pj, .nom-evicted-j{
+	background-color:#6666FF;
+	color:red;
+}
+.hoh-pov{
+	background: linear-gradient(to bottom right, #66FF66 40%, #FFFF33 60%);
+}
+.hoh-dot-pov{
+	background: linear-gradient(to bottom right, #66FF66 35%, #FF66FF 60%, #FFFF33 75%);
+}
+.nom-pov{
+	background: linear-gradient(to bottom right, #6666FF 40%, #FFFF33 60%);
+}
+.nom-vetoed{
+	background: linear-gradient(to bottom right, #6666FF 40%, rgba(0,0,0,0) 60%);
+}
+.nom-pov-vetoed{
+	background: linear-gradient(to bottom right, #6666FF 25%, #FFFF33 50%, rgba(0,0,0,0) 75%);
+}
+.hn{
+	background-color:tan;
+}
+.hn-dot{
+	background: linear-gradient(to bottom right, tan 40%, #FF66FF 60%);
+}
+.hn-nom{
+	background: linear-gradient(to bottom right, tan 40%, #6666FF 60%);
+}
+.hn-nom-evicted-pj, .hn-nom-evicted-j{
+	background: linear-gradient(to bottom right, tan 40%, #6666FF 60%);
+	color:red;
+}
+.hn-pov{
+	background: linear-gradient(to bottom right, tan 40%, #FFFF33 60%);
+}
+.hn-nom-pov{
+	background: linear-gradient(to bottom right, tan 25%, #6666FF 50%, #FFFF33 75%);
+}
+.hn-nom-vetoed{
+	background: linear-gradient(to bottom right, tan 25%, #6666FF 50%, rgba(0,0,0,0) 75%);
+}
+.hn-nom-pov-vetoed{
+	background: linear-gradient(to bottom right, tan 20%, #6666FF 40%, #FFFF33 60%, rgba(0,0,0,0) 80%);
+}
+.prejury, .bad, .nom-dot-evicted-pj, .nom-dot-evicted-j{
+	color: red;
+}
+.jury{
+	color: pink;
+}
+.expelled{
+	background-color:red;
+}
+.gone{
+	background-color:gray;
+}
+.runner-up{
+	background-color:silver;
+}
+.winner{
+	background-color:gold;
+}
+.dot{
+	background-color:#FF66FF;
+}
+.ss{
+	background-color:orange;
+}
+.ss-saved{
+	background-color:#f8d568;
+}
+.hn-ss{
+	background: linear-gradient(to bottom right, tan 40%, orange 60%);
+}
+.hoh-dot{
+	background: linear-gradient(to bottom right, #66FF66 40%, #FF66FF 60%);
+}
+.nom-rk, .nom-rk-evicted-pj{
+	background: linear-gradient(to bottom right, #6666FF 40%, orange 60%);
+}
+.rk-nom, .rk-nom-evicted-pj{
+	background: linear-gradient(to bottom right, orange 40%, #6666FF 60%);
+}
+.nom-dot, .nom-dot-evicted-pj, .nom-dot-evicted-j{
+	background: linear-gradient(to bottom right, #6666FF 40%, #FF66FF 60%);
+}
+.pov-dot{
+	background: linear-gradient(to bottom right, #FFFF33 40%, #FF66FF 60%);
+}
+.fav{
+	background-color:purple;
+}
+.runner-up-fav{
+	background: linear-gradient(to bottom right, silver 40%, purple 60%);
+}
+.first{
+	background-color:gold;
+}
+.second{
+	background-color:silver;
+}
+.third{
+	background-color:#CD7F32;
+}
+.thisWeek{
+	border: 5px solid black;
+}
+.thisWeek > th{
+	color:blue;
+}
+.rules > td, .rules > th{
+	font-size:15px!important;
+	text-align:left!important;
+}
+.twin{
+	font-size:15px;
+}
+.co-hoh1{
+	background: linear-gradient(to bottom right, #66FF66 40%, rgba(0,0,0,0) 60%);
+}
+.co-hoh2{
+	background: linear-gradient(to bottom right, rgba(0,0,0,0) 40%, #66FF66 60%);
+}
