@@ -8,6 +8,17 @@ table{
 	margin:auto;
 	text-align:center;
 }
+#grid {
+    width: 50%;
+    max-width: 90%;
+    margin-bottom: 20px;
+}
+.grid {
+	font-size: 40px;
+}
+.chart {
+	font-size: 30px;
+}
 th, td{
 	text-align:center;
 	font-weight:bold;

@@ -4,6 +4,10 @@ $(document).ready(function(){
         $("#rulesDiv").slideToggle();
 		if($(this).text()=="Show Rules"){
 			$(this).text("Hide Rules");
+			$("#gridDiv").slideUp();
+			$("#showGrid").text("Show Grid");
+			$("#chartDiv").slideUp();
+			$("#showChart").text("Show Chart");
 		} else {
 			$(this).text("Show Rules");
 		}
@@ -14,8 +18,22 @@ $(document).ready(function(){
 			$(this).text("Hide Chart");
 			$("#rulesDiv").slideUp();
 			$("#showRules").text("Show Rules");
+			$("#gridDiv").slideUp();
+			$("#showGrid").text("Show Grid");
 		} else {
 			$(this).text("Show Chart");
+		}
+    });
+    $("#showGrid").click(function(){
+        $("#gridDiv").slideToggle();
+		if($(this).text()=="Show Grid"){
+			$(this).text("Hide Grid");
+			$("#rulesDiv").slideUp();
+			$("#showRules").text("Show Rules");
+			$("#chartDiv").slideUp();
+			$("#showChart").text("Show Chart");
+		} else {
+			$(this).text("Show Grid");
 		}
     });
     
@@ -215,4 +233,8 @@ $(document).ready(function(){
         $("th.mom").addClass("first");
         $("th.christian").addClass("second");
     }
+	else {
+        $("th.mom").addClass("second");
+        $("th.christian").addClass("second");
+	}
 });

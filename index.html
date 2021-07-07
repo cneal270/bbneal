@@ -13,15 +13,22 @@
         <h2>*** CONTAINS SPOILERS!!! ***</h2>
         <div class="container">
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-sm-4">
+					<button id="showGrid" class="btn btn-success" style="width:100%; height: 60px; font-size:20px;">Show Grid</button>
+				</div>
+				<div class="col-sm-4">
 					<button id="showRules" class="btn btn-primary" style="width:100%; height: 60px; font-size:20px;">Show Rules</button>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<button id="showChart" class="btn btn-danger" style="width:100%; height: 60px; font-size:20px;">Show Chart</button>
 				</div>
 			</div>
 		</div>
         <hr/>
+		
+        <footer>Seasons: <a href="bb17.html">BB17</a> | <a href="bb18.html">BB18</a> | <a href="bb19.html">BB19</a> | <a href="bb20.html">BB20</a> | <a href="bb21.html">BB21</a> | <a href="bb22.html">BB22</a> | BB23</footer>
+        <hr/>
+		
         <div id="rulesDiv" style="width:400px;margin:auto;display:none;">
             <table class="table table-striped table-bordered">
                 <tr class="rules">
@@ -151,15 +158,46 @@
                 </tr>
             </table>
         </div>
-        <footer>Seasons: <a href="bb17.html">BB17</a> | <a href="bb18.html">BB18</a> | <a href="bb19.html">BB19</a> | <a href="bb20.html">BB20</a> | <a href="bb21.html">BB21</a> | <a href="bb22.html">BB22</a> | BB23</footer>
-        <hr/>
+		
+		<div id="gridDiv" style="display:none;">
+			<table class="table table-striped table-bordered" id="grid">
+				<tr><td colspan="5" class="border"></td></tr>
+				<tr class="">
+					<th rowspan="2" style="vertical-align: middle;" class="mom grid">Mom<hr/><span class="mom"></span><br/>points</th>
+					<th class="name xavier"><a href="http://www.cbs.com/shows/big_brother/cast/216529"><img src="bb23/xavier.png" class="" /><br/>Xavier</a></th>
+					<th class="name brent"><a href="http://www.cbs.com/shows/big_brother/cast/216516"><img src="bb23/brent.png" class="" /><br/>Brent</a></th>
+					<th class="name tiffany"><a href="http://www.cbs.com/shows/big_brother/cast/216526"><img src="bb23/tiffany.png" class="" /><br/>Tiffany</a></th>
+					<th class="name britini"><a href="http://www.cbs.com/shows/big_brother/cast/216517"><img src="bb23/britini.png" class="" /><br/>Britini</a></th>
+					</tr>
+					<th class="name frenchie"><a href="http://www.cbs.com/shows/big_brother/cast/216522"><img src="bb23/frenchie.png" class="" /><br/>"Frenchie"</a></th>
+					<th class="name christianb"><a href="http://www.cbs.com/shows/big_brother/cast/216518"><img src="bb23/christianb.png" class="" /><br/>Christian</a></th>
+					<th class="name hannah"><a href="http://www.cbs.com/shows/big_brother/cast/216523"><img src="bb23/hannah.png" class="" /><br/>Hannah</a></th>
+					<th class="name whitney"><a href="http://www.cbs.com/shows/big_brother/cast/216528"><img src="bb23/whitney.png" class="" /><br/>Whitney</a></th>
+				</tr>
+				<tr><td colspan="5" class="border"></td></tr>
+				<tr class="">
+					<th rowspan="2" style="vertical-align: middle;" class="christian grid">Christian<hr/><span class="christian"></span><br/>points</th>
+					<th class="name kyland"><a href="http://www.cbs.com/shows/big_brother/cast/216524"><img src="bb23/kyland.png" class="" /><br/>Kyland</a></th>
+					<th class="name azah"><a href="http://www.cbs.com/shows/big_brother/cast/216515"><img src="bb23/azah.png" class="" /><br/>Azah</a></th>
+					<th class="name claire"><a href="http://www.cbs.com/shows/big_brother/cast/216531"><img src="bb23/claire.png" class="" /><br/>Claire</a></th>
+					<th class="name xiao"><a href="http://www.cbs.com/shows/big_brother/cast/216521"><img src="bb23/xiao.png" class="" /><br/>Derek&nbsp;X.</a></th>
+					</tr>
+					<th class="name frazier"><a href="http://www.cbs.com/shows/big_brother/cast/216520"><img src="bb23/frazier.png" class="" /><br/>Derek&nbsp;F.</a></th>
+					<th class="name travis"><a href="http://www.cbs.com/shows/big_brother/cast/216527"><img src="bb23/travis.png" class="" /><br/>Travis</a></th>
+					<th class="name alyssa"><a href="http://www.cbs.com/shows/big_brother/cast/216514"><img src="bb23/alyssa.png" class="" /><br/>Alyssa</a></th>
+					<th class="name sarah"><a href="http://www.cbs.com/shows/big_brother/cast/216525"><img src="bb23/sarah.png" class="" /><br/>Sarah</a></th>
+				</tr>
+				<tr><td colspan="5" class="border"></td></tr>
+			</table>
+		</div>
+		
 		<div id="chartDiv" style="display:none;">
 			<table class="table table-striped table-bordered" id="chart">
 				<tr>
 					<td></td>
-					<th colspan="8" class="mom ">Mom &mdash; <span class="mom"></span> points</th>
+					<th colspan="8" class="mom chart">Mom &mdash; <span class="mom"></span> points</th>
 					<td class="border"></td>
-					<th colspan="8" class="christian ">Christian &mdash; <span class="christian"></span> points</th>
+					<th colspan="8" class="christian chart">Christian &mdash; <span class="christian"></span> points</th>
 				</tr>
 				<tr class="thisWeek">
 					<th></th>
