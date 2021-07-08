@@ -3,7 +3,14 @@ $(document).ready(function(){
 	var row = 1;
 	
 	// *** WEEK 1 ***
-	
+    $("tr."+row+" > td[name~='frenchie']").addClass("hoh");
+    $("tr."+row+" > td[name~='azah']").addClass("safe");
+    $("tr."+row+" > td[name~='britini']").addClass("safe");
+    $("tr."+row+" > td[name~='frazier']").addClass("safe");
+    $("tr."+row+" > td[name~='christianb']").addClass("hn");
+    $("tr."+row+" > td[name~='alyssa']").addClass("hn");
+    $("tr."+row+" > td[name~='xavier']").addClass("hn");
+    $("tr."+row+" > td[name~='sarah']").addClass("hn");
 	
 	
 	

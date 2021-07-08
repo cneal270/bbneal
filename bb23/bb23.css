@@ -114,8 +114,9 @@ img.evicted{
 .ss{
 	background-color:orange;
 }
-.ss-saved{
-	background-color:#f8d568;
+.safe{
+	background-color:rgb(255, 255, 0, 0.25)
+	
 }
 .hn-ss{
 	background: linear-gradient(to bottom right, tan 40%, orange 60%);
@@ -168,4 +169,16 @@ img.evicted{
 }
 .co-hoh2{
 	background: linear-gradient(to bottom right, rgba(0,0,0,0) 40%, #66FF66 60%);
+}
+.joker{
+	border: 5px solid yellow;
+}
+.ace{
+	border: 5px solid red;
+}
+.king{
+	border: 5px solid blue;
+}
+.queen{
+	border: 5px solid green;
 }

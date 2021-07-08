@@ -66,7 +66,7 @@ $(document).ready(function(){
     $("#chart td.expelled").text("-5");
     $("#chart td.ss").text("2");
     $("#chart td.hn-ss").text("1.5");
-    $("#chart td.ss-saved").text("0");
+    $("#chart td.safe").text("0");
     $("#chart td.fav").text("10");
     $("#chart td.runner-up-fav").text("25");
     $("#chart td.co-hoh1").text("2.5");
