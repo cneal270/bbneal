@@ -64,8 +64,8 @@ $(document).ready(function(){
     $("#chart td.runner-up").text("15");
     $("#chart td.winner").text("30");
     $("#chart td.expelled").text("-5");
-    $("#chart td.ss").text("2");
-    $("#chart td.hn-ss").text("1.5");
+    $("#chart td.wild").text("2");
+    $("#chart td.hn-wild").text("1.5");
     $("#chart td.safe").text("0");
     $("#chart td.fav").text("10");
     $("#chart td.runner-up-fav").text("25");

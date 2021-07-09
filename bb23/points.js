@@ -7,10 +7,11 @@ $(document).ready(function(){
     $("tr."+row+" > td[name~='azah']").addClass("safe");
     $("tr."+row+" > td[name~='britini']").addClass("safe");
     $("tr."+row+" > td[name~='frazier']").addClass("safe");
-    $("tr."+row+" > td[name~='christianb']").addClass("hn");
+    $("tr."+row+" > td[name~='christianb']").addClass("hn-wild");
     $("tr."+row+" > td[name~='alyssa']").addClass("hn");
     $("tr."+row+" > td[name~='xavier']").addClass("hn");
     $("tr."+row+" > td[name~='sarah']").addClass("hn");
+    $("tr."+row+" > td[name~='xavier']").addClass("safe");
 	
 	
 	
