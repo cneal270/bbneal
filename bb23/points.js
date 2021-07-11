@@ -13,6 +13,7 @@ $(document).ready(function(){
     $("tr."+row+" > td[name~='sarah']").addClass("hn");
     $("tr."+row+" > td[name~='xavier']").addClass("safe");
     $("tr."+row+" > td[name~='kyland']").addClass("nom");
+    $("tr."+row+" > td[name~='xiao']").addClass("pov");
 	
 	
 	
