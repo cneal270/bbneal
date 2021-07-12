@@ -9,9 +9,8 @@ $(document).ready(function(){
     $("tr."+row+" > td[name~='frazier']").addClass("safe");
     $("tr."+row+" > td[name~='christianb']").addClass("hn-wild");
     $("tr."+row+" > td[name~='alyssa']").addClass("hn-nom");
-    $("tr."+row+" > td[name~='xavier']").addClass("hn");
     $("tr."+row+" > td[name~='sarah']").addClass("hn");
-    $("tr."+row+" > td[name~='xavier']").addClass("safe");
+    $("tr."+row+" > td[name~='xavier']").addClass("hn-safe");
     $("tr."+row+" > td[name~='kyland']").addClass("nom");
     $("tr."+row+" > td[name~='xiao']").addClass("pov");
 	

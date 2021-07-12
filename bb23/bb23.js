@@ -67,6 +67,7 @@ $(document).ready(function(){
     $("#chart td.wild").text("2");
     $("#chart td.hn-wild").text("1.5");
     $("#chart td.safe").text("0");
+    $("#chart td.hn-safe").text("-0.5");
     $("#chart td.fav").text("10");
     $("#chart td.runner-up-fav").text("25");
     $("#chart td.co-hoh1").text("2.5");
