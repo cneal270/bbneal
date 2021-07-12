@@ -112,14 +112,14 @@ img.evicted{
 	background-color:#FF66FF;
 }
 .wild{
-	background-color:#BC3823;
+	background-color:#26F7FD;
 }
 .safe{
 	background-color:rgb(255, 255, 0, 0.25)
 	
 }
 .hn-wild{
-	background: linear-gradient(to bottom right, tan 40%, #BC3823 60%);
+	background: linear-gradient(to bottom right, tan 40%, #26F7FD 60%);
 }
 .hoh-dot{
 	background: linear-gradient(to bottom right, #66FF66 40%, #FF66FF 60%);
@@ -171,14 +171,14 @@ img.evicted{
 	background: linear-gradient(to bottom right, rgba(0,0,0,0) 40%, #66FF66 60%);
 }
 .joker{
-	border: 5px solid yellow;
+	border: 4px groove orange;
 }
 .ace{
-	border: 5px solid red;
+	border: 4px groove red;
 }
 .king{
-	border: 5px solid blue;
+	border: 4px groove blue;
 }
 .queen{
-	border: 5px solid green;
+	border: 4px groove green;
 }
