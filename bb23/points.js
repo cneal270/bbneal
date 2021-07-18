@@ -28,6 +28,7 @@ $(document).ready(function(){
     $("tr."+row+" > td[name~='sarah']").addClass("wild");
     $("tr."+row+" > td[name~='frenchie']").addClass("nom");
     $("tr."+row+" > td[name~='britini']").addClass("nom");
+    $("tr."+row+" > td[name~='xiao']").addClass("pov");
 	
 	
 	
