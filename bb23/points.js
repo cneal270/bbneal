@@ -22,13 +22,12 @@ $(document).ready(function(){
     $("tr."+row+" > td[name~='claire']").addClass("safe");
     $("tr."+row+" > td[name~='tiffany']").addClass("safe");
     $("tr."+row+" > td[name~='brent']").addClass("hn");
-    $("tr."+row+" > td[name~='xiao']").addClass("hn");
     $("tr."+row+" > td[name~='whitney']").addClass("hn");
     $("tr."+row+" > td[name~='hannah']").addClass("hn");
     $("tr."+row+" > td[name~='sarah']").addClass("wild");
     $("tr."+row+" > td[name~='frenchie']").addClass("nom");
     $("tr."+row+" > td[name~='britini']").addClass("nom");
-    $("tr."+row+" > td[name~='xiao']").addClass("pov");
+    $("tr."+row+" > td[name~='xiao']").addClass("hn-pov");
 	
 	
 	
